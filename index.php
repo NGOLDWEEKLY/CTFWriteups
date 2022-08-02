@@ -1,3 +1,34 @@
+<?php
+
+function get_user_browser()
+{
+    $u_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ub = '';
+    if(preg_match('/Firefox/i',$u_agent))
+    {
+        $ub = "firefox";
+    }
+    else
+    {
+        $ub = "other";
+    }
+
+} 
+
+if (isset($_GET['print']) && $_GET['print'] != "" && $ub = 'firefox') 
+{
+    $pg = $_GET['print'];
+    if (!file_exists('1')) 
+    {
+        echo '<b>It worked!</b>';
+    }
+}
+else 
+{
+    echo '';
+}
+
+?>
 <body>
     <header>
         <ul>
